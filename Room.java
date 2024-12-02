@@ -7,7 +7,7 @@ public class Room {
     public Room(int roomNumber, String category, double price) {
         this.roomNumber = roomNumber;
         this.category = category;
-        this.available = true; // Rooms are available by default
+        this.available = true; 
         this.price = price;
     }
 
@@ -27,12 +27,12 @@ public class Room {
         return available;
     }
 
-    // Mark room as booked
+    
     public void bookRoom() {
         this.available = false;
     }
 
-    // Cancel the booking and mark room as available
+    
     public void cancelBooking() {
         this.available = true;
     }

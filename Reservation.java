@@ -19,7 +19,7 @@ public class Reservation {
         return guestName;
     }
 
-    // Method to display the reservation details
+    
     public void viewReservationDetails() {
         System.out.println("\nReservation Details:");
         System.out.println("Guest Name: " + guestName);

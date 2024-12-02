@@ -9,13 +9,13 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Adding sample rooms to the hotel
+        
         addRooms();
 
         boolean running = true;
 
         while (running) {
-            // Displaying the main menu to the user
+            
             System.out.println("\nHotel Reservation System");
             System.out.println("1. Search for Available Rooms");
             System.out.println("2. Make a Reservation");
@@ -23,7 +23,7 @@ public class Main {
             System.out.println("4. Exit");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -45,7 +45,7 @@ public class Main {
         }
     }
 
-    // Adds sample rooms to the system
+    
     private static void addRooms() {
         rooms.add(new Room(101, "Single", 100.0));
         rooms.add(new Room(102, "Single", 120.0));
@@ -54,7 +54,7 @@ public class Main {
         rooms.add(new Room(301, "Suite", 250.0));
     }
 
-    // Searches for available rooms based on category input
+    
     private static void searchAvailableRooms() {
         System.out.print("\nEnter room category (Single/Double/Suite): ");
         String category = scanner.nextLine();
@@ -72,13 +72,13 @@ public class Main {
         }
     }
 
-    // Makes a reservation for a room
+    
     private static void makeReservation() {
         System.out.print("\nEnter guest name: ");
         String guestName = scanner.nextLine();
         System.out.print("Enter room number: ");
         int roomNumber = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
         System.out.print("Enter check-in date (YYYY-MM-DD): ");
         String checkInDate = scanner.nextLine();
         System.out.print("Enter check-out date (YYYY-MM-DD): ");
@@ -100,14 +100,14 @@ public class Main {
         double totalAmount = roomToReserve.getPrice();
         System.out.print("Total Amount: $" + totalAmount + ". Enter payment amount: ");
         double paymentAmount = scanner.nextDouble();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         if (paymentAmount < totalAmount) {
             System.out.println("Payment is insufficient. Reservation not made.");
             return;
         }
 
-        // Process payment (basic validation)
+        
         if (paymentAmount >= totalAmount) {
             System.out.println("Payment successful! Reserving room...");
             roomToReserve.bookRoom();
@@ -119,7 +119,7 @@ public class Main {
         }
     }
 
-    // View reservation details for a guest
+    
     private static void viewBookingDetails() {
         System.out.print("\nEnter guest name to view booking details: ");
         String guestName = scanner.nextLine();
